@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{8000f2c4-a8f6-4469-a011-39bb3b619f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilties">
+      <UniqueIdentifier>{38ea190a-6c29-4584-bbe1-91c6f7ff2474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{838de47a-b962-417d-a0cf-d1fceeb3965f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{1c9dfef9-9298-4d2d-a449-0ce3d051d62a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource">
+      <UniqueIdentifier>{64eb2624-72b8-4dfa-87e1-53c48f8df55b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource">
+      <UniqueIdentifier>{1e04b9c7-bf4c-4d91-b136-d4e6a808146e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__Exception.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="__Window.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="__Graphics.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="__Keyboard.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="__Mouse.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="__Vector2D.h">
+      <Filter>Header Files\Utilties</Filter>
+    </ClInclude>
+    <ClInclude Include="__Matrix3x3.h">
+      <Filter>Header Files\Utilties</Filter>
+    </ClInclude>
+    <ClInclude Include="__Resource.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="__LineGeometry.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="__Square.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="__VertexBuffer.h">
+      <Filter>Header Files\Utilties</Filter>
+    </ClInclude>
+    <ClInclude Include="__PreCompiledHeaders.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="__Star.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="__Window.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="__Exception.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="__Graphics.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="__Keyboard.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="__Mouse.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="__LineGeometry.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="__Square.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="__VertexBuffer.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="__Star.cpp">
+      <Filter>Source Files\Resource</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

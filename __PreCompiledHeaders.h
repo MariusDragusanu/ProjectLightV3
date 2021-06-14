@@ -1,0 +1,15 @@
+#pragma once
+#include <iostream>
+#include <vector>
+#include <assert.h>
+#include <memory>
+#include <algorithm>
+#include <string>
+#include <sstream>
+#include <exception>
+#include <Windows.h>
+#include <windowsx.h>
+#include <d2d1.h>
+#include <dwrite.h>
+#include <wrl.h>
+#include <D2DErr.h>
