@@ -1,4 +1,4 @@
-#include "__Graphics.h"
+
 
 __Graphics::__Graphics(const HWND& hWnd, int width, int height)
 {

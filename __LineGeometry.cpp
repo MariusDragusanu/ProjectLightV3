@@ -1,4 +1,4 @@
-#include "__LineGeometry.h"
+
 __LineGeometry::__LineGeometry(const __VertexBuffer& data, __Graphics& Gfx) :buffer(data)
 {
 	HRESULT hr;
@@ -21,7 +21,7 @@ void __LineGeometry::Draw(__Graphics& Gfx)
 	GFX_THROW(__Resource::GetTarget(Gfx)->CreateSolidColorBrush(d2::ColorF(d2::ColorF::Red), &p_Brush));
 	__Resource::GetTarget(Gfx)->DrawGeometry(p_Geometry.Get(), p_Brush.Get());
 }
-void __LineGeometry::Update( Matrix::__Matrix3f&& cbuffer, __Graphics& Gfx)
+void __LineGeometry::Update(const Matrix::__Matrix3f& cbuffer, __Graphics& Gfx)
 {
 	buffer.ApplyTransform(cbuffer);
 	GFX_THROW(__Resource::GetFactory(Gfx)->CreatePathGeometry(&p_Geometry));

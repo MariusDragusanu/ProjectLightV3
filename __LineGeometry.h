@@ -7,5 +7,5 @@ class __LineGeometry :public __Resource
 	
 public:				 __LineGeometry(const __VertexBuffer& data, __Graphics& Gfx);
 	  void				 Draw(__Graphics& Gfx);
-	  void             Update( Matrix::__Matrix3f&& cbuffer, __Graphics& gfx)override;
+	  void             Update( const Matrix::__Matrix3f& cbuffer, __Graphics& gfx)override;
 };

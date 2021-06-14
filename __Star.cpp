@@ -1,6 +1,5 @@
-#include "__Star.h"
 
-__Star::__Star(__Graphics& Gfx,const D2D1_POINT_2F& Middle, FLOAT Size, UINT n_Tips, UINT Inside, UINT Outside) :Inside(Inside), Outside(Outside)
+__Star::__Star(__Graphics& Gfx,const D2D1_POINT_2F& Middle, FLOAT Size, UINT n_Tips, UINT In, UINT Out) :Inside(In), Outside(Out)
 {
 	std::vector<__Vector2D>BigVertexBuffer;
 	BigVertexBuffer.reserve(n_Tips * 2);
@@ -38,12 +37,13 @@ void __Star::Draw(__Graphics& Gfx)
 	__Resource::GetTarget(Gfx)->FillGeometry(p_Geometry.Get(), p_Brush.Get());
 }
 
-void __Star::Update( Matrix::__Matrix3f&& cBuffer, __Graphics& Gfx)
+void __Star::Update(const Matrix::__Matrix3f& cBuffer, __Graphics& Gfx)
 {
 	pBuffer->ApplyTransform(cBuffer);
 	HRESULT hr;
 
 	GFX_THROW(__Resource::GetFactory(Gfx)->CreatePathGeometry(&p_Geometry));
+
 	GFX_THROW(p_Geometry->Open(&p_Sink));
 	p_Sink->SetFillMode(D2D1_FILL_MODE_WINDING);
 

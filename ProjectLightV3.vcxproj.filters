@@ -31,78 +31,129 @@
     <Filter Include="Source Files\Resource">
       <UniqueIdentifier>{1e04b9c7-bf4c-4d91-b136-d4e6a808146e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{792abc7a-b298-4e54-80e0-5ddd184d72af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{09b84b22-65fb-436d-b47b-e2fd105927e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\__SystemHeaders">
+      <UniqueIdentifier>{c6dd4dcc-28f2-43a1-a5d3-ae660b20014b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilties\__UtilitiesHeaders">
+      <UniqueIdentifier>{1c196533-8e5d-47d9-9697-862f65e411ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource\__ResourseHeaders">
+      <UniqueIdentifier>{eafc99b1-1474-4804-be85-f2416310b5e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource\__ResourseFiles">
+      <UniqueIdentifier>{37a7ed90-18a3-4f5f-9d6c-0b7c446e548d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System\__SystemFiles">
+      <UniqueIdentifier>{dcca6474-fc7a-40d6-b1b7-4370081c33d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\__UtilitiesFiles">
+      <UniqueIdentifier>{bfa29e77-3446-4af9-bdca-0381b4bfbcaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__Exception.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="__Window.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="__Graphics.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="__Keyboard.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="__Mouse.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="__Vector2D.h">
-      <Filter>Header Files\Utilties</Filter>
-    </ClInclude>
-    <ClInclude Include="__Matrix3x3.h">
-      <Filter>Header Files\Utilties</Filter>
-    </ClInclude>
     <ClInclude Include="__Resource.h">
       <Filter>Header Files\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="__LineGeometry.h">
-      <Filter>Header Files\Resource</Filter>
+    <ClInclude Include="__Aplication.h">
+      <Filter>Header Files\Application</Filter>
     </ClInclude>
-    <ClInclude Include="__Square.h">
-      <Filter>Header Files\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="__VertexBuffer.h">
+    <ClInclude Include="__Utility.h">
       <Filter>Header Files\Utilties</Filter>
     </ClInclude>
+    <ClInclude Include="__Window.h">
+      <Filter>Header Files\System\__SystemHeaders</Filter>
+    </ClInclude>
     <ClInclude Include="__PreCompiledHeaders.h">
+      <Filter>Header Files\System\__SystemHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Mouse.h">
+      <Filter>Header Files\System\__SystemHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Keyboard.h">
+      <Filter>Header Files\System\__SystemHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Graphics.h">
+      <Filter>Header Files\System\__SystemHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Exception.h">
+      <Filter>Header Files\System\__SystemHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__System.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="__VertexBuffer.h">
+      <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Vector2D.h">
+      <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Timer.h">
+      <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Matrix3x3.h">
+      <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__Square.h">
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__LineGeometry.h">
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
+    </ClInclude>
     <ClInclude Include="__Star.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="__Window.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="__Exception.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="__Graphics.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="__Keyboard.cpp">
-      <Filter>Source Files\System</Filter>
+    <ClCompile Include="__Aplication.cpp">
+      <Filter>Source Files\Application</Filter>
     </ClCompile>
-    <ClCompile Include="__Mouse.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="__LineGeometry.cpp">
+    <ClCompile Include="__Resource.cpp">
       <Filter>Source Files\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="__Square.cpp">
-      <Filter>Source Files\Resource</Filter>
+    <ClCompile Include="__System.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="__VertexBuffer.cpp">
+    <ClCompile Include="__Utility.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="__Star.cpp">
-      <Filter>Source Files\Resource</Filter>
+      <Filter>Source Files\Resource\__ResourseFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__LineGeometry.cpp">
+      <Filter>Source Files\Resource\__ResourseFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Square.cpp">
+      <Filter>Source Files\Resource\__ResourseFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Window.cpp">
+      <Filter>Source Files\System\__SystemFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Mouse.cpp">
+      <Filter>Source Files\System\__SystemFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Keyboard.cpp">
+      <Filter>Source Files\System\__SystemFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Graphics.cpp">
+      <Filter>Source Files\System\__SystemFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Exception.cpp">
+      <Filter>Source Files\System\__SystemFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__VertexBuffer.cpp">
+      <Filter>Source Files\Utilities\__UtilitiesFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__Timer.cpp">
+      <Filter>Source Files\Utilities\__UtilitiesFiles</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

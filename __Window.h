@@ -1,6 +1,5 @@
 #pragma once
-#include"__Keyboard.h"
-#include "__Mouse.h"
+
 class __Window
 {
 public:class __HWNDException :public __Exception

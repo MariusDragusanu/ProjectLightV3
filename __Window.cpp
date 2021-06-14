@@ -1,6 +1,5 @@
-#include "__Window.h"
-#include "__Mouse.cpp"
-#include "__Keyboard.cpp"
+
+
 WNDCLASSEX __Window::wc;
 HWND __Window::hWnd = nullptr;
 __Window::__HWNDException::__HWNDException(int line, const char* filename, HRESULT hr) noexcept:

@@ -1,9 +1,9 @@
 #pragma once
-#include "__Graphics.h"
+
 class __Resource 
 {
 public:
-	          virtual void           Update( Matrix::__Matrix3f&& NewData, __Graphics& Gfx)=0;
+	          virtual void           Update( const Matrix::__Matrix3f& NewData, __Graphics& Gfx)=0;
 
 protected: 
 	static   ID2D1Factory*       GetFactory(__Graphics& Gfx)  { return Gfx.p_Factory.Get(); };
@@ -15,9 +15,13 @@ protected:
 	wrl::ComPtr<ID2D1SolidColorBrush> p_Brush;
 private:
 			  
+
+
 };
 
-
+#include "__Star.h"
+#include "__LineGeometry.h"
+#include "__Square.h"
 
 
 

@@ -1,6 +1,4 @@
-#include "__VertexBuffer.h"
-
-__VertexBuffer::__VertexBuffer( std::vector<__Vector2D>&& data):buffer(std::move(data))
+__VertexBuffer::__VertexBuffer( std::vector<__Vector2D>&& data):buffer(data)
 {
 }
 
@@ -18,9 +16,9 @@ void __VertexBuffer::Release() noexcept
 
 void __VertexBuffer::ApplyTransform(const __Matrix3f& Matrix)
 {
-    for (UINT i = 0; i < buffer.size(); i++)
+    for (auto iterator=buffer.begin(); iterator<buffer.end();++iterator)
     {
-        buffer[i]=std::move(buffer[i] * Matrix);
+        (*iterator)=(*iterator)* Matrix;
     }
 
 } 
