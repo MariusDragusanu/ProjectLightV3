@@ -15,6 +15,6 @@ private:void DrawCalls();
 	   __Square square;
 	   __Square square2;
 	   __Star Star;
-
+	   __TextBox Box;
 };
 
