@@ -12,9 +12,10 @@ public:__Aplication(int width, int height, const wchar_t* Title);
 
 	  bool Is_Running = true;
 private:void DrawCalls();
-	   __Square square;
-	   __Square square2;
+	   __Rectangle square;
+	   __Rectangle square2;
 	   __Star Star;
 	   __TextBox Box;
+	   __UserInterface UI;
 };
 

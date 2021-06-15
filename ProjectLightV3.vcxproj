@@ -152,7 +152,7 @@
     <ClInclude Include="__Keyboard.h" />
     <ClInclude Include="__Matrix3x3.h" />
     <ClInclude Include="__Mouse.h" />
-    <ClInclude Include="__Square.h" />
+    <ClInclude Include="__Rectangle.h" />
     <ClInclude Include="__Star.h" />
     <ClInclude Include="__System.h" />
     <ClInclude Include="__Timer.h">
@@ -192,7 +192,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="__Square.cpp">
+    <ClCompile Include="__Rectangle.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>

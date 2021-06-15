@@ -99,7 +99,7 @@
     <ClInclude Include="__Matrix3x3.h">
       <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
     </ClInclude>
-    <ClInclude Include="__Square.h">
+    <ClInclude Include="__Rectangle.h">
       <Filter>Header Files\Resource\__ResourseHeaders</Filter>
     </ClInclude>
     <ClInclude Include="__LineGeometry.h">
@@ -131,7 +131,7 @@
     <ClCompile Include="__LineGeometry.cpp">
       <Filter>Source Files\Resource\__ResourseFiles</Filter>
     </ClCompile>
-    <ClCompile Include="__Square.cpp">
+    <ClCompile Include="__Rectangle.cpp">
       <Filter>Source Files\Resource\__ResourseFiles</Filter>
     </ClCompile>
     <ClCompile Include="__Window.cpp">

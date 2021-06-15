@@ -5,7 +5,8 @@ using namespace Matrix;
 struct  __Vector2D:D2D1_POINT_2F
 {
 __Vector2D(D2D1_POINT_2F&& Vertex)noexcept;
-	    __Vector2D(FLOAT x, FLOAT y)noexcept;
+__Vector2D(const D2D1_POINT_2F& Vertex) :D2D1_POINT_2F(Vertex) {};
+__Vector2D(FLOAT x, FLOAT y)noexcept;
 		D2D1_POINT_2F GetPosition()const noexcept;
 		__Vector2D& Normalize()const noexcept;
 		__Vector2D operator + (const __Vector2D& Rhs) const noexcept;
