@@ -13,3 +13,6 @@
 #include <dwrite.h>
 #include <wrl.h>
 #include <D2DErr.h>
+#include <chrono>
+#include <cstdlib>
+#include <time.h>

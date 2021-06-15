@@ -1,5 +1,4 @@
-#include <string>
-#include "__Exception.h"
+
 
 __Exception::__Exception(int line, const char* file)noexcept
 	:Line(line),

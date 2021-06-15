@@ -1,7 +1,7 @@
 #pragma once
 
 using namespace Matrix;
-//Trebuie sa modifici codul astfel incat operatorii sa modifice obiectul existent in memorie nu sa  creeze unul nou
+
 struct  __Vector2D:D2D1_POINT_2F
 {
 __Vector2D(D2D1_POINT_2F&& Vertex)noexcept;
@@ -17,7 +17,7 @@ __Vector2D(D2D1_POINT_2F&& Vertex)noexcept;
         
 };
 __Vector2D::__Vector2D(D2D1_POINT_2F&& Point)noexcept :
-						D2D1_POINT_2F(std::move(Point))
+						D2D1_POINT_2F(Point)
 {
 
 }

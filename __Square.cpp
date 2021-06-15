@@ -1,4 +1,4 @@
-#include "__Square.h"
+
 __Square::__Square(__Graphics& Gfx,  D2D1_POINT_2F&& Middle, FLOAT Width, UINT Inside, UINT outside) :Inside(Inside), Outside(outside)
 {
 	std::vector<__Vector2D>Vertices;
@@ -31,13 +31,15 @@ __Square::__Square(__Graphics& Gfx,  D2D1_POINT_2F&& Middle, FLOAT Width, UINT I
 
 }
 
-void __Square::Update( Matrix::__Matrix3f&& cBuffer, __Graphics& Gfx)
+void __Square::Update( const Matrix::__Matrix3f& cBuffer, __Graphics& Gfx)
 {
 	pBuffer->ApplyTransform(cBuffer);
 	HRESULT hr;
 
 	GFX_THROW(__Resource::GetFactory(Gfx)->CreatePathGeometry(&p_Geometry));
+	
 	GFX_THROW(p_Geometry->Open(&p_Sink));
+	
 	p_Sink->SetFillMode(D2D1_FILL_MODE_WINDING);
 
 	p_Sink->BeginFigure(pBuffer->GetBuffer().front(), D2D1_FIGURE_BEGIN_FILLED);

@@ -35,7 +35,7 @@ protected:
 			  mutable wrl::ComPtr<ID2D1LinearGradientBrush>p_GradientBrush=nullptr;
 			  
 			  friend class __Resource;
-			  friend class __Drawable;
+			  friend class __TextInterface;
 };
 
 #define GFX_THROW(Expression)  if(FAILED( hr=Expression)) throw __Graphics::__GraphicsException(__LINE__, __FILE__,hr)
