@@ -1,6 +1,6 @@
 #include "__Rectangle.h"
 
-__Rectangle::__Rectangle(__Graphics& Gfx,  D2D1_POINT_2F&& Middle, FLOAT Width, FLOAT Height,UINT Inside, UINT outside) :Inside(Inside), Outside(outside)
+__Rectangle::__Rectangle(__Graphics& Gfx,  D2D1_POINT_2F&& Middle, FLOAT Width, FLOAT Height,UINT Inside, UINT outside) :Inside(Inside), Outside(outside), Rect({ Middle.x - Width,Middle.y - Height, Middle.x + Width, Middle.y + Height }),Middle(Middle)
 {
 	std::vector<__Vector2D>Vertices;
 	Vertices.reserve(4);
@@ -32,7 +32,7 @@ __Rectangle::__Rectangle(__Graphics& Gfx,  D2D1_POINT_2F&& Middle, FLOAT Width, 
 
 }
 
-__Rectangle::__Rectangle(__Graphics& Gfx, const D2D1_POINT_2F& Middle, FLOAT Width, FLOAT Height, UINT Inside, UINT outside):Inside(Inside), Outside(outside)
+__Rectangle::__Rectangle(__Graphics& Gfx, const D2D1_POINT_2F& Middle, FLOAT Width, FLOAT Height, UINT Inside, UINT outside) :Inside(Inside), Outside(outside), Rect({ Middle.x - Width,Middle.y - Height, Middle.x + Width, Middle.y + Height }), Middle(Middle)
 {
 	std::vector<__Vector2D>Vertices;
 	Vertices.reserve(4);

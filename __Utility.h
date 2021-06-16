@@ -3,3 +3,4 @@
 #include "__Vector2D.h"
 #include "__VertexBuffer.h"
 #include "__Timer.h"
+#include "__MathFunctions.h"

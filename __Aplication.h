@@ -17,5 +17,6 @@ private:void DrawCalls();
 	   __Star Star;
 	   __TextBox Box;
 	   __UserInterface UI;
+	   __Slider Slider;
 };
 

@@ -8,8 +8,9 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR nCmdLine, int nCmdSho
 		__Aplication App(1920,1080, L"Project Light");
 		while (App.Is_Running)
 		{
-			App.OnUpdate();
 			App.OnDraw();
+			App.OnUpdate();
+			
 		}
 	}
 	catch (const std::runtime_error& e)

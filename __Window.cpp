@@ -103,11 +103,14 @@ bool __Window::ProcessMessage()
 
 void __Window::ProcessInput(const MSG& msg)
 {
+	float x = GET_X_LPARAM(msg.lParam);
+	float y = GET_Y_LPARAM(msg.lParam);
 	switch (msg.message)
 	{
-	case WM_LBUTTONDOWN: {float x = GET_X_LPARAM(msg.lParam); float y = GET_Y_LPARAM(msg.lParam); mouse.LMButtonIsPressed(x, y); }break;
-	case WM_LBUTTONUP: {float x = LOWORD(msg.lParam); float y = HIWORD(msg.lParam); mouse.LMButtonIsReleased(x, y); }break;
-}
+	case WM_LBUTTONDOWN: {  mouse.LMButtonIsPressed(x, y); }break;
+	case WM_LBUTTONUP:  { mouse.LMButtonIsReleased(x, y); }break;
+	case WM_MOUSEMOVE: {mouse.MouseMove(x, y); }
+	}
 }
 
 LRESULT __Window::WindowProc(HWND h, UINT m, WPARAM w, LPARAM l)

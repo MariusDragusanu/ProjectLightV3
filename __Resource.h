@@ -18,11 +18,6 @@ private:
 
 
 };
-
-#include "__Star.h"
-#include "__LineGeometry.h"
-#include "__Rectangle.h"
-
 class __TextInterface
 {
 protected:
@@ -35,69 +30,63 @@ public: virtual bool IsSelected(const __Window&) { return true; };
 	
 };
 
-class __TextBox : public __TextInterface
-{
+#include "__Star.h"
+#include "__LineGeometry.h"
+#include "__Rectangle.h"
+#include "__TextBox.h"
+#include "__UserInterface.h"
 
-	std::wstring Text;
-	UINT TextColor;
-	D2D1_RECT_F Box;
-public:__TextBox(__Graphics& Gfx, D2D1_RECT_F&& Box,const wchar_t* format, FLOAT, UINT Color=45454);
+
+class __Slider :public __TextInterface
+{
+	__Rectangle Slider;
+	__Star Button;
+	__TextBox Title;
+public: __Slider(__Graphics& Gfx, const D2D1_POINT_2F& Middle, UINT Inside, UINT Color, const wchar_t* Title);
 	  void Draw(__Graphics& Gfx);
-	  bool IsSelected(const __Window& Wnd)override
-	  {
-		  __Vector2D MousePos = Wnd.mouse.GetPosition();
-		  if (MousePos.x > Box.left and MousePos.x<Box.right and MousePos.y>Box.top and MousePos.y < Box.bottom)
-		  {
-			  return true;
-		  }
-		  else return false;
-	  }
-	  auto GetRect()const { return Box; }
+	  bool IsSelected(const __Window& Wnd)override;
+	  DOUBLE GetInterpolatedCoefficient();
+	  void SetPosition(__Graphics& Gfx, D2D1_POINT_2F&& NewPos);
 };
-
-__TextBox::__TextBox(__Graphics&  Gfx, D2D1_RECT_F&& Box, const wchar_t* text, FLOAT Size,UINT Color):Text(text),__TextInterface(),Box(std::move(Box)),TextColor(Color)
+__Slider::__Slider(__Graphics& Gfx, const D2D1_POINT_2F& Middle, UINT Inside, UINT Color, const wchar_t* Title) :
+			Slider(Gfx, Middle, 150, 15, Inside, Color),
+			Button(Gfx, Middle, 15, 90, 9898545, Color),
+			Title(Gfx, { Middle.x - 75,Middle.y - 50,Middle.x + 75,Middle.y - 20 }, Title, 15, Color)
 {
-	GFX_THROW(__TextInterface::GetWFactory(Gfx)->CreateTextFormat(L"Arial Black",
-		                                                                  NULL,
-		                                                                  DWRITE_FONT_WEIGHT_NORMAL,
-		                                                                  DWRITE_FONT_STYLE_NORMAL,
-		                                                                  DWRITE_FONT_STRETCH_NORMAL,
-		                                                                  Size,
-		                                                                  L"en-us",
-		                                                                  &p_Format));
-	__TextInterface::GetTarget(Gfx)->CreateSolidColorBrush(D2D1::ColorF(Color), &p_Brush);
+
+}
+void __Slider::Draw(__Graphics& Gfx)
+{
+	Slider.Draw(Gfx);
+	Button.Draw(Gfx);
+	Title.Draw(Gfx);
 }
 
- void __TextBox::Draw(__Graphics& Gfx)
+bool __Slider::IsSelected(const __Window& Wnd)
 {
-	 __TextInterface::GetTarget(Gfx)->DrawTextW(Text.data(), Text.length(), p_Format.Get(), Box, p_Brush.Get());
- }
+	auto MousePos = Wnd.mouse.GetPosition();
+	auto Top = Slider.GetRect().top,
+		Left = Slider.GetRect().left,
+		Right = Slider.GetRect().right,
+		Bottom = Slider.GetRect().bottom;
+	if (MousePos.x >=Left and MousePos.x<=Right and MousePos.y>=Top and MousePos.y <=Bottom)
+	{
+		return true;
 
- class __UserInterface :public __TextInterface
- {
-	 
-	 __TextBox Text;
-	 __Rectangle  Box;
- public:__UserInterface(__Graphics& Gfx, const D2D1_POINT_2F& Middle, UINT Out, UINT  Ins, FLOAT Width, FLOAT Height, const wchar_t* Caption,FLOAT TextSize);
-	   void Draw(__Graphics& Gfx);
-	   bool IsSelected(const __Window& Wnd)override;
- };
- __UserInterface::__UserInterface(__Graphics& Gfx, const D2D1_POINT_2F& Middle, UINT Out, UINT Ins, FLOAT Width, FLOAT Height, const wchar_t* Caption,FLOAT TextSize):
-	                  Box(Gfx,Middle,Width,Height,Ins,Out),
-	                  Text(Gfx, {Middle.x-Width,Middle.y-Height,Middle.x+Width,Middle.y+Height},Caption,TextSize,0)
-	                  
- {
- }
+	}
+	else return false;
+}
 
- void __UserInterface::Draw(__Graphics& Gfx)
- {
-	 Box.Draw(Gfx);
-	 Text.Draw(Gfx);
-	 
+ void __Slider::SetPosition(__Graphics& Gfx, D2D1_POINT_2F&& NewPos)
+{
+	 FLOAT dx = 0, dy = 0;
+	 dx = NewPos.x;
+	 dy = (Slider.GetRect().bottom - Slider.GetRect().top) * 1.0f / 2.0f + Slider.GetRect().top;
+	 Button.SetPosition(D2D1_POINT_2F({dx,dy}), Gfx);
  }
+	
 
- bool __UserInterface::IsSelected(const __Window& Wnd)
- {
-	 
-	 return Text.IsSelected(Wnd);
- }
+
+ 
+
+ 

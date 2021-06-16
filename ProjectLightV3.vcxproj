@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="__Aplication.h" />
     <ClInclude Include="__LineGeometry.h" />
+    <ClInclude Include="__MathFunctions.h" />
     <ClInclude Include="__Resource.h" />
     <ClInclude Include="__PreCompiledHeaders.h" />
     <ClInclude Include="__Keyboard.h" />
@@ -155,10 +156,12 @@
     <ClInclude Include="__Rectangle.h" />
     <ClInclude Include="__Star.h" />
     <ClInclude Include="__System.h" />
+    <ClInclude Include="__TextBox.h" />
     <ClInclude Include="__Timer.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="__UserInterface.h" />
     <ClInclude Include="__Utility.h" />
     <ClInclude Include="__Vector2D.h" />
     <ClInclude Include="__Window.h" />
@@ -204,7 +207,15 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="__TextBox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="__Timer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="__UserInterface.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>

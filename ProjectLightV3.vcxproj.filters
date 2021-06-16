@@ -108,6 +108,15 @@
     <ClInclude Include="__Star.h">
       <Filter>Header Files\Resource\__ResourseHeaders</Filter>
     </ClInclude>
+    <ClInclude Include="__TextBox.h">
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__UserInterface.h">
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="__MathFunctions.h">
+      <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -154,6 +163,12 @@
     </ClCompile>
     <ClCompile Include="__Timer.cpp">
       <Filter>Source Files\Utilities\__UtilitiesFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__TextBox.cpp">
+      <Filter>Source Files\Resource\__ResourseFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__UserInterface.cpp">
+      <Filter>Source Files\Resource\__ResourseFiles</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
