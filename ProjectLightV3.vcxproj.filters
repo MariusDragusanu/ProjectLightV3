@@ -117,6 +117,9 @@
     <ClInclude Include="__MathFunctions.h">
       <Filter>Header Files\Utilties\__UtilitiesHeaders</Filter>
     </ClInclude>
+    <ClInclude Include="__LightSource.h">
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -168,6 +171,9 @@
       <Filter>Source Files\Resource\__ResourseFiles</Filter>
     </ClCompile>
     <ClCompile Include="__UserInterface.cpp">
+      <Filter>Source Files\Resource\__ResourseFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="__LightSource.cpp">
       <Filter>Source Files\Resource\__ResourseFiles</Filter>
     </ClCompile>
   </ItemGroup>

@@ -9,4 +9,5 @@ public:__TextBox(__Graphics& Gfx, D2D1_RECT_F&& Box, const wchar_t* format, FLOA
 	  void Draw(__Graphics& Gfx);
 	  bool IsSelected(const __Window& Wnd)override;
 	  auto GetRect()const { return Box; }
+	  void SetText(std::wstring&& NewText) { this->Text = std::move(NewText); }
 };

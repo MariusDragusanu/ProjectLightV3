@@ -6,12 +6,12 @@
 __Aplication::__Aplication(int width, int height, const wchar_t* Title) :
 	Wnd(width, height, Title),
 	Gfx(Wnd.GetHandle(), width, height),
-	square(Gfx, { 900,900 }, 50, 90, 45, 0),
-	square2(Gfx, { 1000,500 }, 70, 90, 9898, 0),
-	Star(Gfx, { 600,600 }, 50, 36, 12124, 0),
-	Box(Gfx, D2D1_RECT_F({ 500,500,700,700 }), L"text", 50),
-	UI(Gfx, { 900,300 }, 0, 99989898, 100, 90, L"Experiment", 30),
-	Slider(Gfx, { 300,300 }, 78787, 0, L"Adjust the value")
+	Slider1(Gfx, D2D1_POINT_2F({ 350,150 }), 78787, 0, L"Distanta dintre panouri", 10),
+	Slider2(Gfx, D2D1_POINT_2F({ 750,150 }), 78787, 0, L"Lambda", 10),
+	Slider3(Gfx, D2D1_POINT_2F({ 1150,150 }), 78787, 0, L"Pozitia pe axa Ox a sursei", 10),
+	Slider4(Gfx, D2D1_POINT_2F({ 1550,150 }), 78787, 0, L"Pozitia pe axa Oy a sursei", 10),
+	caseta(Gfx, { 400,600,500,700 }, std::to_wstring(Slider1.GetInterpolatedCoefficient()).c_str(), 20, 5454545),
+	Sun(Gfx, { 200,600 }, 127, 454545, 150)
 {
 }
 
@@ -24,22 +24,36 @@ void __Aplication::OnUpdate()
 		coeficient = 0.3;
 	}
 	Is_Running = Wnd.ProcessMessage();
-
-	if (Slider.IsSelected(Wnd))
+	if (Wnd.mouse.GetEvent(Mouse::LMButtonClick))
 	{
-		Slider.SetPosition(Gfx, std::move(Wnd.mouse.GetPosition()));
-		MessageBeep(MB_OK);
+		if (Slider1.IsSelected(Wnd))
+		{
+			Slider1.SetPosition(Gfx, std::move(Wnd.mouse.GetPosition()));
+			
+		}
+		if (Slider2.IsSelected(Wnd))
+		{
+			Slider2.SetPosition(Gfx, std::move(Wnd.mouse.GetPosition()));
+			
+		}
+		if (Slider3.IsSelected(Wnd))
+		{
+			Slider3.SetPosition(Gfx, std::move(Wnd.mouse.GetPosition()));
+			
+		}
+		if (Slider4.IsSelected(Wnd))
+		{
+			Slider4.SetPosition(Gfx, std::move(Wnd.mouse.GetPosition()));
+			
+		}
 	}
-	square.Update(Matrix::__RotationAroundAnPoint3f(square.GetMiddle(), 0.3), Gfx);
-	square2.Update(Matrix::__RotationAroundAnPoint3f(square2.GetMiddle(), -0.3), Gfx);
-	Star.Update(Matrix::__RotationAroundAnPoint3f(Star.GetInfo().Middle, coeficient), Gfx);
-	
- }
+	Sun.Update(Gfx, Matrix::__RotationAroundAnPoint3f({ 200,600 }, 0.05));
+}
 
 void __Aplication::OnDraw()
 {
 	Gfx.BeginDraw();
-	Gfx.ClearScreen(0.22f, 0.44f, 0.66f);
+	Gfx.ClearScreen(0, 0, 0);
 	DrawCalls();
 	Gfx.EndDraw();
 }
@@ -47,11 +61,13 @@ void __Aplication::OnDraw()
 void __Aplication::DrawCalls()
 {
 
-	square.Draw(Gfx);
-	square2.Draw(Gfx);
-	Star.Draw(Gfx);
-	Box.Draw(Gfx);
-	UI.Draw(Gfx);
-	Slider.Draw(Gfx);
+	
+	Slider1.Draw(Gfx);
+	Slider2.Draw(Gfx);
+	Slider3.Draw(Gfx);
+	Slider4.Draw(Gfx);
+	caseta.SetText(std::to_wstring(Slider1.GetInterpolatedCoefficient()).c_str());
+	caseta.Draw(Gfx);
+	Sun.Draw(Gfx);
 	
 }

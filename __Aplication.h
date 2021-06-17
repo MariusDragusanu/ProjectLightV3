@@ -12,11 +12,7 @@ public:__Aplication(int width, int height, const wchar_t* Title);
 
 	  bool Is_Running = true;
 private:void DrawCalls();
-	   __Rectangle square;
-	   __Rectangle square2;
-	   __Star Star;
-	   __TextBox Box;
-	   __UserInterface UI;
-	   __Slider Slider;
+	   __Slider Slider1, Slider2, Slider3, Slider4;
+	   __TextBox caseta;
+	   __LightSource Sun;
 };
-

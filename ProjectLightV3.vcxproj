@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="__Aplication.h" />
+    <ClInclude Include="__LightSource.h" />
     <ClInclude Include="__LineGeometry.h" />
     <ClInclude Include="__MathFunctions.h" />
     <ClInclude Include="__Resource.h" />
@@ -170,6 +171,10 @@
     <ClInclude Include="__VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="__LightSource.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="__Resource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>

@@ -1,5 +1,6 @@
+#include "__LineGeometry.h"
 
-__LineGeometry::__LineGeometry(const __VertexBuffer& data, __Graphics& Gfx) :buffer(data)
+__LineGeometry::__LineGeometry(const __VertexBuffer& data, __Graphics& Gfx, UINT Color) :buffer(data)
 {
 	HRESULT hr;
 
@@ -12,13 +13,31 @@ __LineGeometry::__LineGeometry(const __VertexBuffer& data, __Graphics& Gfx) :buf
 	p_Sink->AddLines(data.GetBuffer().data(), data.GetBuffer().size());
 	p_Sink->EndFigure(D2D1_FIGURE_END_CLOSED);
 	p_Sink->Close();
+	GFX_THROW(__Resource::GetTarget(Gfx)->CreateSolidColorBrush(d2::ColorF(Color), &p_Brush));
+}
 
+__LineGeometry::__LineGeometry(__Graphics Gfx, D2D1_POINT_2F&& Begin, D2D1_POINT_2F&& End, UINT Color)
+{ 
+	
+	
+	D2D1_POINT_2F points[] = { Begin, End };
+	
+	GFX_THROW(__Resource::GetFactory(Gfx)->CreatePathGeometry(&p_Geometry));
+	GFX_THROW(p_Geometry->Open(&p_Sink));
+	p_Sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+
+	p_Sink->BeginFigure(points[0], D2D1_FIGURE_BEGIN_FILLED);
+
+	p_Sink->AddLines(points, 2);
+	p_Sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+	p_Sink->Close();
+	GFX_THROW(__Resource::GetTarget(Gfx)->CreateSolidColorBrush(d2::ColorF(Color), &p_Brush));
 }
 
 void __LineGeometry::Draw(__Graphics& Gfx)
 {
 
-	GFX_THROW(__Resource::GetTarget(Gfx)->CreateSolidColorBrush(d2::ColorF(d2::ColorF::Red), &p_Brush));
+
 	__Resource::GetTarget(Gfx)->DrawGeometry(p_Geometry.Get(), p_Brush.Get());
 }
 void __LineGeometry::Update(const Matrix::__Matrix3f& cbuffer, __Graphics& Gfx)
