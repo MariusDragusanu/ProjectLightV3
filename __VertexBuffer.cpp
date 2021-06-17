@@ -2,7 +2,7 @@ __VertexBuffer::__VertexBuffer( std::vector<__Vector2D>&& data):buffer(data)
 {
 }
 
- const auto __VertexBuffer::GetBuffer() const noexcept
+  std::vector<__Vector2D> __VertexBuffer::GetBuffer() const noexcept
 {
     return buffer;
 }

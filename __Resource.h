@@ -102,7 +102,6 @@ DOUBLE __Slider::GetInterpolatedCoefficient()
 
 }
 
-
  
 
  

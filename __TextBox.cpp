@@ -8,7 +8,7 @@ __TextBox::__TextBox(__Graphics& Gfx, D2D1_RECT_F&& Box, const wchar_t* text, FL
 		Size,
 		L"en-us",
 		&p_Format));
-	__TextInterface::GetTarget(Gfx)->CreateSolidColorBrush(D2D1::ColorF(Color), &p_Brush);
+	GFX_THROW(__TextInterface::GetTarget(Gfx)->CreateSolidColorBrush(D2D1::ColorF(Color), &p_Brush));
 }
 void __TextBox::Draw(__Graphics& Gfx)
 {

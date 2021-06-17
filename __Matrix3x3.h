@@ -6,7 +6,7 @@ namespace Matrix
 	struct __Matrix3f
 	{
 		float Matrix[3][3];
-		__Matrix3f() :Matrix() { Matrix[2][2] = 1.0; };
+		__Matrix3f() :Matrix() { Matrix[0][0] = 1.0; Matrix[1][1] = 1.0; Matrix[2][2] = 1.0; };
 
 	};
 	struct __TranslationMatrix3f :__Matrix3f

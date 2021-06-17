@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="__Aplication.h" />
     <ClInclude Include="__LightSource.h" />
+    <ClInclude Include="__Line.h" />
     <ClInclude Include="__LineGeometry.h" />
     <ClInclude Include="__MathFunctions.h" />
     <ClInclude Include="__Resource.h" />

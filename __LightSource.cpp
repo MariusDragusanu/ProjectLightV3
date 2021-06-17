@@ -32,3 +32,11 @@ void __LightSource::Update(__Graphics& Gfx, const Matrix::__Matrix3f& cBuffer)
 		val.Update(cBuffer,Gfx);
 	}
 }
+void __LightSource::Reflect(const __Mirror& Mirrror,__Graphics& Gfx)
+{
+	for (auto& val : ListOfRays)
+	{
+		val.AddData(Mirrror.ComputeReflexion(val));
+		val.Update(Gfx);
+	}
+}

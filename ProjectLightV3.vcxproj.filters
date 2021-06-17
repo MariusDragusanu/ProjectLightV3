@@ -120,6 +120,9 @@
     <ClInclude Include="__LightSource.h">
       <Filter>Header Files\Resource\__ResourseHeaders</Filter>
     </ClInclude>
+    <ClInclude Include="__Line.h">
+      <Filter>Header Files\Resource\__ResourseHeaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

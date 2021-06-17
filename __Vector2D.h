@@ -13,6 +13,10 @@ __Vector2D(FLOAT x, FLOAT y)noexcept;
 		__Vector2D operator - (const __Vector2D& Rhs) const noexcept;
 		__Vector2D operator * (const __Matrix3f& Matrix) const noexcept;
 		__Vector2D&  operator &() const noexcept;
+		__Vector2D operator* (DOUBLE Scalar)
+		{
+			return __Vector2D(this->x * Scalar, this->y * Scalar);
+		}
 		FLOAT    operator * (const __Vector2D& Rhs) const noexcept;
 		FLOAT   GetModule()const noexcept;
         

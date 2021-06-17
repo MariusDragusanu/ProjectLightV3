@@ -21,7 +21,10 @@ __LineGeometry::__LineGeometry(__Graphics Gfx, D2D1_POINT_2F&& Begin, D2D1_POINT
 	
 	
 	D2D1_POINT_2F points[] = { Begin, End };
-	
+	std::vector<__Vector2D>vector;
+	vector.emplace_back(Begin);
+	vector.emplace_back(End);
+	buffer.AddData(std::move(vector));
 	GFX_THROW(__Resource::GetFactory(Gfx)->CreatePathGeometry(&p_Geometry));
 	GFX_THROW(p_Geometry->Open(&p_Sink));
 	p_Sink->SetFillMode(D2D1_FILL_MODE_WINDING);
